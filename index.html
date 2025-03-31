@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Speaker Transcription</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Video Speaker Transcription</h1>
+        <p>Upload a video to transcribe with speaker identification</p>
+      </div>
+
+      <form id="upload-form">
+        <div class="upload-container" id="upload-area">
+          <input
+            type="file"
+            id="video-upload"
+            accept="video/*"
+            style="display: none"
+          />
+          <svg
+            class="upload-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="17 8 12 3 7 8"></polyline>
+            <line x1="12" y1="3" x2="12" y2="15"></line>
+          </svg>
+          <div class="file-name" id="file-name">
+            Click to upload or drag and drop
+          </div>
+          <div class="file-hint">
+            MP4, MOV, or other video formats (max 100MB)
+          </div>
+        </div>
+
+        <div class="error-message" id="error-message"></div>
+
+        <video id="video-preview" class="video-preview" controls></video>
+
+        <button type="submit" class="button" id="submit-button" disabled>
+          Transcribe Video
+        </button>
+      </form>
+
+      <div class="progress-container" id="progress-container">
+        <div class="progress-bar">
+          <div class="progress-indicator" id="progress-indicator"></div>
+        </div>
+        <div class="progress-text" id="progress-text">Processing video...</div>
+      </div>
+
+      <div class="transcript-container" id="transcript-container">
+        <h2 class="transcript-title">Transcript</h2>
+        <div id="transcript-content"></div>
+      </div>
+    </div>
+
+    <script src="client.js"></script>
+  </body>
+</html>
